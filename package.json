@@ -1,13 +1,13 @@
 {
-  "name": "react-media-library",
-  "version": "1.0.3",
-  "description": "React Media Library is a UI package similar to the WordPress media library, but for React. It features file drag-and-drop as well as a library to select previously uploaded files.",
-  "homepage": "https://github.com/Richard1320/React-Media-Library#readme",
+  "name": "react-media-library-daniel-daleva",
+  "version": "0.0.1",
+  "description": "Variation over React Media Library. This is a UI package similar to the WordPress media library, but for React. It features file drag-and-drop as well as a library to select previously uploaded files.",
+  "homepage": "https://github.com/danieldaleva/react-media-library-daniel-daleva#readme",
   "main": "build/index.js",
   "types": "types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Richard1320/React-Media-Library.git"
+    "url": "git@github.com:danieldaleva/react-media-library-daniel-daleva.git"
   },
   "keywords": [
     "react",
@@ -25,37 +25,37 @@
     "build": "rm -rf build && tsc",
     "test": "ts-mocha ./test/**/*"
   },
-  "author": "Richard Hung <richardhung111@gmail.com> (http://www.magicmediamuse.com)",
+  "author": "Daniel Daleva <danieldaleva@gmail.com> (http://impacto.ooo)",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.2.2",
-    "@types/enzyme": "^3.10.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/chai": "^4.2.14",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/expect": "^1.20.4",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.6.8",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
+    "@types/node": "^12.19.9",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
     "chai": "^4.2.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "jsdom": "^15.1.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jsdom": "^15.2.1",
     "jsdom-global": "^3.0.2",
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.3",
     "ts-mocha": "^6.0.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.1"
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "react-bootstrap": "^1.0.0-beta.12",
-    "react-dropzone": "^10.1.9"
+    "react-bootstrap": "^1.4.0",
+    "react-dropzone": "^10.2.2"
   },
   "peerDependencies": {
     "react": "^16.X.X",
     "react-dom": "^16.X.X"
   },
   "bugs": {
-    "url": "https://github.com/Richard1320/React-Media-Library/issues",
-    "email": "richardhung111@gmail.com"
+    "url": "https://github.com/danieldaleva/react-media-library-daniel-daleva/issues",
+    "email": "danieldaleva@gmail.com"
   }
 }
