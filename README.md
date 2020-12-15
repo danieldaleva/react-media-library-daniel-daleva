@@ -1,5 +1,9 @@
 # React Media Library
 
+This is a copy with improvements from the excelent plugin created by [Richard1320][https://github.com/Richard1320/React-Media-Library]. 
+
+---
+
 Have you ever worked with WordPress? If not, count your blessings. :)
 
 But seriously, using a CMS like WordPress does provide a lot of useful features. The feature I miss most as a MERN developer is the media library browser. All image fields are edited using a modal where you can select something previously uploaded or drag-and-drop new images from your file browser. React Media Library provides an image browser in React using React Bootstrap. 
@@ -26,7 +30,7 @@ Note: this only includes the UI; everybody's app is different so I can't write y
 Install it via npm in your project.
 
 ```
-npm install react-media-library --save
+npm install react-media-library-daniel-daleva --save
 ```
 
 ## Component
