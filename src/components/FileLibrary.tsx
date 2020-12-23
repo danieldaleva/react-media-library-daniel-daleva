@@ -71,7 +71,9 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 				)}
 				<Button
 					variant="primary"
-					onClick={() => props.fileSelectCallback(selectedItem as FileLibraryListItem)}
+					onClick={() => {
+						if (props.fileSelectCallback) props.fileSelectCallback(selectedItem as FileLibraryListItem);
+					}}
 				>
 					Select File
 				</Button>
@@ -79,7 +81,7 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 		</Row>
 	));
 
-	const pagerRow: ReactNode = ((props.fileLibraryList.length > itemsPerPage) && (
+	const pagerRow: ReactNode = ((props.fileLibraryList) && (props.fileLibraryList.length > itemsPerPage) && (
 		<Row>
 			<Col className="d-flex justify-content-center">
 				<FileLibraryPager
@@ -106,6 +108,7 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 FileLibrary.defaultProps = {
 	sortProperty: "createdAt",
 	sortAscending: false,
+	isLoading: true,
 	libraryCardComponent: FileLibraryCard,
 };
 

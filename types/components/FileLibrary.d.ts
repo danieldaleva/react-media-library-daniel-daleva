@@ -13,10 +13,15 @@ export interface FileLibraryListItem {
 }
 
 export interface FileLibraryProps {
-	fileLibraryList: FileLibraryListItem[];
+	isLoading?: boolean;
+	loadingMessage?: string;
+	emptyMessage?: string;
+	uploadTitle?: string;
+	libraryTitle?: string;
+	fileLibraryList?: FileLibraryListItem[];
 	sortProperty?: "title" | "createdAt" | "size" | "fileName";
 	sortAscending?: boolean;
-	fileSelectCallback: (item: FileLibraryListItem) => void;
+	fileSelectCallback?: (item: FileLibraryListItem) => void;
 	fileDeleteCallback?: (item: FileLibraryListItem) => void;
 	libraryCardComponent?: React.FC<any>;
 }

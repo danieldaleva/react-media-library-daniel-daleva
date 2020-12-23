@@ -59,7 +59,7 @@ fileDeleteCallback | function | N/A | See [fileDeleteCallback](#filedeletecallba
 Async callback function when the user chooses a file to upload. This is used for both the drag-and-drop as well as the browser file select. The first argument is the file base64 as a string. The second argument contains the [FileMeta](#filemeta) information. This promise should return true or false to let React Media Library know if the APIs successfully processed the file.
 
 ```
-import {FileMeta} from 'react-media-library';
+import {FileMeta} from 'react-media-library-daniel-daleva';
 async function uploadCallback(fileBase64: string, fileMeta: FileMeta): Promise<boolean> {
     // Process the file data, send it to backend APIs, add it to the database, etc...
     // Also remember to update the fileLibraryList prop with a new list
@@ -75,7 +75,7 @@ async function uploadCallback(fileBase64: string, fileMeta: FileMeta): Promise<b
 Callback function when the user selects a file from the library. Returns [FileLibraryListItem](#filelibrarylistitem) as the first argument.
 
 ```
-import {FileLibraryListItem} from 'react-media-library';
+import {FileLibraryListItem} from 'react-media-library-daniel-daleva';
 function selectCallback(item: FileLibraryListItem) {
     // Use the file, put the file ID into your input field, etc
 }
@@ -86,7 +86,7 @@ function selectCallback(item: FileLibraryListItem) {
 Optional callback function when the user chooses a file and clicks the delete button. Delete button will appear beside the select button in the library tab, or will be hidden if this prop is not set. Returns [FileLibraryListItem](#filelibrarylistitem) as the first argument.
  
 ```
-import {FileLibraryListItem} from 'react-media-library';
+import {FileLibraryListItem} from 'react-media-library-daniel-daleva';
 function deleteCallback(item: FileLibraryListItem) {
     // Delete the data from your database
     // Also remember to update the fileLibraryList prop with a new list
@@ -122,7 +122,7 @@ fileName | string (optional) | Displayed filename on card in library tab.
 
 ```
 import React, {useEffect, useState} from 'react';
-import {FileLibraryListItem, ReactMediaLibrary, FileMeta} from 'react-media-library';
+import {FileLibraryListItem, ReactMediaLibrary, FileMeta} from 'react-media-library-daniel-daleva';
 
 const ReactMediaLibraryWrapper: React.FC = () => {
     const [display, setDisplay] = useState<boolean>(false);

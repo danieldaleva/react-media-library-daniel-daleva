@@ -6,6 +6,8 @@ export interface ReactMediaLibraryProps extends FileUploadProps, FileLibraryProp
 	show: boolean;
 	onHide: () => void;
 	modalTitle?: string;
+	uploadTitle?: string;
+	libraryTitle?: string;
 }
 
 export const ReactMediaLibrary: React.FC<ReactMediaLibraryProps>;
