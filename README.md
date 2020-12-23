@@ -222,6 +222,8 @@ const ReactMediaLibraryWrapper: React.FC = () => {
                 loadingMessage="Carregando mídia..."
                 emptyMessage="Biblioteca está vazia"
                 isLoading={isLoading}
+                deleteButtonLabel="Apagar"
+                selectButtonLabel="Selecionar"
                 show={display}
                 onHide={() => setDisplay(false)}
                 fileUploadCallback={uploadCallback}

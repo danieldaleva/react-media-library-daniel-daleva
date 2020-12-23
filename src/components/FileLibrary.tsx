@@ -66,7 +66,7 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 						}}
 						className="mr-3"
 					>
-						Delete
+						{props.deleteButtonLabel}
 					</Button>
 				)}
 				<Button
@@ -75,7 +75,7 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 						if (props.fileSelectCallback) props.fileSelectCallback(selectedItem as FileLibraryListItem);
 					}}
 				>
-					Select File
+					{props.selectButtonLabel}
 				</Button>
 			</Col>
 		</Row>
@@ -108,7 +108,7 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 FileLibrary.defaultProps = {
 	sortProperty: "createdAt",
 	sortAscending: false,
-	libraryCardComponent: FileLibraryCard,
+	libraryCardComponent: FileLibraryCard
 };
 
 export default FileLibrary;

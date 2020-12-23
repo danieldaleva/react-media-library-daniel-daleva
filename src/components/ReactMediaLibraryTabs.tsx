@@ -9,14 +9,7 @@ import FileLibraryLoading from "./FileLibraryIsLoading";
 
 const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: ReactMediaLibraryTabsProps): JSX.Element => {
 	return (
-		<Tabs defaultActiveKey="upload" id="react-media-library-tabs">
-			<Tab eventKey="upload" title={props.uploadTitle}>
-				<div className="pt-3">
-					<FileUpload
-						fileUploadCallback={props.fileUploadCallback}
-					/>
-				</div>
-			</Tab>
+		<Tabs defaultActiveKey="library" id="react-media-library-tabs">
 
 			{ props.isLoading &&
 				<Tab eventKey="library" title={props.loadingMessage}>
@@ -26,7 +19,7 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 				</Tab>
 			}
 
-			{!props.isLoading &&
+			{ !props.isLoading &&
 
 				<Tab eventKey="library" title={props.libraryTitle}>
 					{(Array.isArray(props.fileLibraryList) && props.fileLibraryList.length > 0) &&
@@ -35,6 +28,8 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 							fileSelectCallback={props.fileSelectCallback}
 							fileDeleteCallback={props.fileDeleteCallback}
 							libraryCardComponent={props.libraryCardComponent}
+							deleteButtonLabel={props.deleteButtonLabel}
+							selectButtonLabel={props.selectButtonLabel}
 						/>
 					}
 
@@ -47,6 +42,14 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 				</Tab>
 
 			}
+
+			<Tab eventKey="upload" title={props.uploadTitle}>
+				<div className="pt-3">
+					<FileUpload
+						fileUploadCallback={props.fileUploadCallback}
+					/>
+				</div>
+			</Tab>
 
 		</Tabs>
 	);
