@@ -19,8 +19,11 @@ const ReactMediaLibrary: React.FC<ReactMediaLibraryProps> = (props: ReactMediaLi
 			</Modal.Header>
 			<Modal.Body>
 				<ReactMediaLibraryTabs
+					isLoading={props.isLoading}
 					uploadTitle={props.uploadTitle}
 					libraryTitle={props.libraryTitle}
+					loadingMessage={props.loadingMessage}
+					emptyMessage={props.emptyMessage}
 					fileLibraryList={props.fileLibraryList}
 					fileUploadCallback={props.fileUploadCallback}
 					fileSelectCallback={props.fileSelectCallback}
@@ -34,6 +37,11 @@ const ReactMediaLibrary: React.FC<ReactMediaLibraryProps> = (props: ReactMediaLi
 
 ReactMediaLibrary.defaultProps = {
 	modalTitle: "Media Library",
+	libraryTitle: "Library",
+	uploadTitle: "Upload",
+	emptyMessage: "The library is empty",
+	loadingMessage: "Loading media...",
+	isLoading: true,
 };
 
 export default ReactMediaLibrary;

@@ -9,7 +9,7 @@ const FileLibraryEmpty: React.FC<FileLibraryProps> = (props: FileLibraryProps): 
 		<React.Fragment>
 			<Row className="py-3">
 			<Col  xs={12} sm={6} md={4} lg={3} className="mb-3">
-						{props.emptyMessage || 'The library is empty'}
+						{props.emptyMessage}
 					</Col>
 			</Row>
 		</React.Fragment>

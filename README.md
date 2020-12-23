@@ -213,6 +213,11 @@ const ReactMediaLibraryWrapper: React.FC = () => {
         <React.Fragment>
             <button onClick={() => setDisplay(true)}>Open React Media Library</button>
             <ReactMediaLibrary
+                uploadTitle="Enviar"
+                libraryTitle="Biblioteca"
+                loadingMessage="Carregando mídia..."
+                emptyMessage="Biblioteca está vazia"
+                isLoading={isLoading}
                 show={display}
                 onHide={() => setDisplay(false)}
                 fileUploadCallback={uploadCallback}

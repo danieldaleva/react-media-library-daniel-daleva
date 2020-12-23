@@ -108,7 +108,6 @@ const FileLibrary: React.FC<FileLibraryProps> = (props: FileLibraryProps): JSX.E
 FileLibrary.defaultProps = {
 	sortProperty: "createdAt",
 	sortAscending: false,
-	isLoading: true,
 	libraryCardComponent: FileLibraryCard,
 };
 
