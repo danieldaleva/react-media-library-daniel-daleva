@@ -1,6 +1,6 @@
 {
   "name": "react-media-library-daniel-daleva",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Variation over React Media Library. This is a UI package similar to the WordPress media library, but for React. It features file drag-and-drop as well as a library to select previously uploaded files.",
   "homepage": "https://github.com/danieldaleva/react-media-library-daniel-daleva#readme",
   "main": "build/index.js",
@@ -33,7 +33,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/expect": "^1.20.4",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.19.9",
+    "@types/node": "^12.19.11",
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "chai": "^4.2.0",
