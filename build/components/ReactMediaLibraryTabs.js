@@ -17,10 +17,8 @@ const ReactMediaLibraryTabs = (props) => {
             React.createElement(Tab, { eventKey: "library", title: props.libraryTitle },
                 (Array.isArray(props.fileLibraryList) && props.fileLibraryList.length > 0) &&
                     React.createElement(FileLibrary, { fileLibraryList: props.fileLibraryList, fileSelectCallback: props.fileSelectCallback, fileDeleteCallback: props.fileDeleteCallback, libraryCardComponent: props.libraryCardComponent }),
-                ")",
                 (Array.isArray(props.fileLibraryList) && props.fileLibraryList.length === 0) &&
-                    React.createElement(FileLibraryEmpty, { emptyMessage: props.emptyMessage }),
-                ")")));
+                    React.createElement(FileLibraryEmpty, { emptyMessage: props.emptyMessage }))));
 };
 export default ReactMediaLibraryTabs;
 //# sourceMappingURL=ReactMediaLibraryTabs.js.map

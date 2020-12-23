@@ -127,6 +127,7 @@ import {FileLibraryListItem, ReactMediaLibrary, FileMeta} from 'react-media-libr
 const ReactMediaLibraryWrapper: React.FC = () => {
     const [display, setDisplay] = useState<boolean>(false);
     const [fileLibraryList, setFileLibraryList] = useState<FileLibraryListItem[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
         
     useEffect(() => {
         // TODO Get file list from database
@@ -168,6 +169,9 @@ const ReactMediaLibraryWrapper: React.FC = () => {
                 "thumbnailUrl": "https://mycustomcdn.com/photo-107.jpg"
             }
         ]);
+
+        // After loading media data set loading to false;
+        setIsLoading](false);
 
     }, []);
 
