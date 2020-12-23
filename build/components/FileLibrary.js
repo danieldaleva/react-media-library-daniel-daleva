@@ -67,7 +67,6 @@ const FileLibrary = (props) => {
 FileLibrary.defaultProps = {
     sortProperty: "createdAt",
     sortAscending: false,
-    isLoading: true,
     libraryCardComponent: FileLibraryCard,
 };
 export default FileLibrary;

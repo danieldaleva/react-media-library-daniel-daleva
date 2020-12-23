@@ -36,13 +36,14 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 							fileDeleteCallback={props.fileDeleteCallback}
 							libraryCardComponent={props.libraryCardComponent}
 						/>
-					})
+					}
 
-				{(Array.isArray(props.fileLibraryList) && props.fileLibraryList.length === 0) &&
+					{
+						(Array.isArray(props.fileLibraryList) && props.fileLibraryList.length === 0) &&
 						<FileLibraryEmpty
 							emptyMessage={props.emptyMessage}
 						/>
-					})
+					}
 				</Tab>
 
 			}
