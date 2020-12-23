@@ -8,6 +8,9 @@ export interface ReactMediaLibraryProps extends FileUploadProps, FileLibraryProp
 	modalTitle?: string;
 	uploadTitle?: string;
 	libraryTitle?: string;
+	isLoading?: boolean;
+	loadingMessage?: string;
+	emptyMessage?: string;
 }
 
 export const ReactMediaLibrary: React.FC<ReactMediaLibraryProps>;
