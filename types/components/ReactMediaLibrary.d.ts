@@ -11,6 +11,8 @@ export interface ReactMediaLibraryProps extends FileUploadProps, FileLibraryProp
 	isLoading?: boolean;
 	loadingMessage?: string;
 	emptyMessage?: string;
+	deleteButtonLabel?: string;
+	selectButtonLabel?: string;
 }
 
 export const ReactMediaLibrary: React.FC<ReactMediaLibraryProps>;

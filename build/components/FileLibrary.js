@@ -51,11 +51,11 @@ const FileLibrary = (props) => {
             (props.fileDeleteCallback !== undefined) && (React.createElement(Button, { variant: "danger", onClick: () => {
                     if (props.fileDeleteCallback)
                         props.fileDeleteCallback(selectedItem);
-                }, className: "mr-3" }, "Delete")),
+                }, className: "mr-3" }, props.deleteButtonLabel)),
             React.createElement(Button, { variant: "primary", onClick: () => {
                     if (props.fileSelectCallback)
                         props.fileSelectCallback(selectedItem);
-                } }, "Select File")))));
+                } }, props.selectButtonLabel)))));
     const pagerRow = ((props.fileLibraryList) && (props.fileLibraryList.length > itemsPerPage) && (React.createElement(Row, null,
         React.createElement(Col, { className: "d-flex justify-content-center" },
             React.createElement(FileLibraryPager, { count: props.fileLibraryList.length, page: page, pagerCallback: (number) => setPage(number), itemsPerPage: itemsPerPage })))));
@@ -67,7 +67,7 @@ const FileLibrary = (props) => {
 FileLibrary.defaultProps = {
     sortProperty: "createdAt",
     sortAscending: false,
-    libraryCardComponent: FileLibraryCard,
+    libraryCardComponent: FileLibraryCard
 };
 export default FileLibrary;
 //# sourceMappingURL=FileLibrary.js.map
