@@ -4,7 +4,7 @@ import {FileMeta, FileUploadProps} from "../../types";
 import {FileUploadListItem} from "../../types/components/FileUpload";
 import FileUploadList from "./FileUploadList";
 
-function readFile(file: File): Promise<ArrayBuffer> {
+function readFile(file: File): Promise<string> {
 	const fileReader = new FileReader();
 
 	return new Promise((resolve, reject) => {
@@ -14,9 +14,9 @@ function readFile(file: File): Promise<ArrayBuffer> {
 		};
 
 		fileReader.onload = () => {
-			resolve(fileReader.result as ArrayBuffer);
+			resolve(fileReader.result as string);
 		};
-		fileReader.readAsArrayBuffer(file);
+		fileReader.readAsBinaryString(file);
 	});
 }
 
