@@ -4,7 +4,7 @@ import {FileMeta, FileUploadProps} from "../../types";
 import {FileUploadListItem} from "../../types/components/FileUpload";
 import FileUploadList from "./FileUploadList";
 
-function readFile(file: File): Promise<string> {
+function readFile(file: File): Promise<ArrayBuffer> {
 	const fileReader = new FileReader();
 
 	return new Promise((resolve, reject) => {
@@ -14,9 +14,9 @@ function readFile(file: File): Promise<string> {
 		};
 
 		fileReader.onload = () => {
-			resolve(fileReader.result as string);
+			resolve(fileReader.result as ArrayBuffer);
 		};
-		fileReader.readAsDataURL(file);
+		fileReader.readAsArrayBuffer(file);
 	});
 }
 
@@ -32,9 +32,9 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 		// Loop through dropped files
 		acceptedFiles.forEach((file: File, index: number) => {
 			(async () => {
-				const fileBase64 = await readFile(file);
+				const fileBuffer = await readFile(file);
 				const fileMeta: FileMeta = {fileName: file.name, type: file.type, size: file.size};
-				const result: boolean = await props.fileUploadCallback(fileBase64, fileMeta);
+				const result: boolean = await props.fileUploadCallback(fileBuffer, fileMeta);
 				newFileUploadList = [...newFileUploadList];
 				newFileUploadList[index].status = (result) ? 1 : -1;
 				setFileUploadList(newFileUploadList);

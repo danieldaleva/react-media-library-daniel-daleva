@@ -1,6 +1,6 @@
 # React Media Library
 
-This is a copy with improvements from the excelent plugin created by [Richard1320][https://github.com/Richard1320/React-Media-Library]. 
+This is a copy with improvements from the excelent plugin created by [Richard1320](https://github.com/Richard1320/React-Media-Library). 
 
 ---
 
