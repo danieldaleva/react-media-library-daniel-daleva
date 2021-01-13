@@ -1,6 +1,6 @@
 {
   "name": "react-media-library-daniel-daleva",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Variation over React Media Library. This is a UI package similar to the WordPress media library, but for React. It features file drag-and-drop as well as a library to select previously uploaded files.",
   "homepage": "https://github.com/danieldaleva/react-media-library-daniel-daleva#readme",
   "main": "build/index.js",
