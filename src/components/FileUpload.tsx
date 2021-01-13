@@ -4,7 +4,7 @@ import {FileMeta, FileUploadProps} from "../../types";
 import {FileUploadListItem} from "../../types/components/FileUpload";
 import FileUploadList from "./FileUploadList";
 
-function readFile(file: File): Promise<string> {
+function readFile(file: File): Promise<ArrayBuffer> {
 	const fileReader = new FileReader();
 
 	return new Promise((resolve, reject) => {
@@ -13,10 +13,13 @@ function readFile(file: File): Promise<string> {
 			reject(new DOMException("Problem parsing input file."));
 		};
 
-		fileReader.onload = () => {
-			resolve(fileReader.result as string);
-		};
 		fileReader.readAsBinaryString(file);
+		fileReader.onload = () => {
+			const arrayBuffer = fileReader.result as ArrayBuffer
+          	let bytes = new Uint8Array(arrayBuffer);
+          	resolve(bytes);
+		};
+		
 	});
 }
 

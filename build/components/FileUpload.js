@@ -20,7 +20,7 @@ function readFile(file) {
         fileReader.onload = () => {
             resolve(fileReader.result);
         };
-        fileReader.readAsArrayBuffer(file);
+        fileReader.readAsBinaryString(file);
     });
 }
 const FileUpload = (props) => {
