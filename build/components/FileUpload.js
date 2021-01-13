@@ -20,7 +20,7 @@ function readFile(file) {
         fileReader.onload = () => {
             resolve(fileReader.result);
         };
-        fileReader.readAsDataURL(file);
+        fileReader.readAsArrayBuffer(file);
     });
 }
 const FileUpload = (props) => {
@@ -33,9 +33,9 @@ const FileUpload = (props) => {
         // Loop through dropped files
         acceptedFiles.forEach((file, index) => {
             (() => __awaiter(this, void 0, void 0, function* () {
-                const fileBase64 = yield readFile(file);
+                const fileBuffer = yield readFile(file);
                 const fileMeta = { fileName: file.name, type: file.type, size: file.size };
-                const result = yield props.fileUploadCallback(fileBase64, fileMeta);
+                const result = yield props.fileUploadCallback(fileBuffer, fileMeta);
                 newFileUploadList = [...newFileUploadList];
                 newFileUploadList[index].status = (result) ? 1 : -1;
                 setFileUploadList(newFileUploadList);
