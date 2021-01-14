@@ -4,25 +4,25 @@ import {FileMeta, FileUploadProps} from "../../types";
 import {FileUploadListItem} from "../../types/components/FileUpload";
 import FileUploadList from "./FileUploadList";
 
-function readFile(file: File): Promise<File> {
-	const fileReader = new FileReader();
+// function readFile(file: File): Promise<File> {
+// 	const fileReader = new FileReader();
 
-	return new Promise((resolve, reject) => {
-		fileReader.onerror = () => {
-			fileReader.abort();
-			reject(new DOMException("Problem parsing input file."));
-		};
+// 	// return new Promise((resolve, reject) => {
+	// 	fileReader.onerror = () => {
+	// 		fileReader.abort();
+	// 		reject(new DOMException("Problem parsing input file."));
+	// 	};
 
-		fileReader.readAsArrayBuffer(file);
+	// 	fileReader.readAsArrayBuffer(file);
 
-		fileReader.onload = () => {
+	// 	fileReader.onload = () => {
 			// const arrayBuffer = fileReader.result as ArrayBuffer
           	// let bytes = new Uint8Array(arrayBuffer);
-          	resolve(file);
-		};
+//           	resolve(file);
+// 		// };
 		
-	});
-}
+// 	});
+// }
 
 const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Element => {
 	const [fileUploadList, setFileUploadList] = useState<FileUploadListItem[]>([]);
@@ -36,9 +36,9 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 		// Loop through dropped files
 		acceptedFiles.forEach((file: File, index: number) => {
 			(async () => {
-				const fileBuffer = await readFile(file);
+				// const fileBuffer = await readFile(file);
 				const fileMeta: FileMeta = {fileName: file.name, type: file.type, size: file.size};
-				const result: boolean = await props.fileUploadCallback(fileBuffer, fileMeta);
+				const result: boolean = await props.fileUploadCallback(file, fileMeta);
 				newFileUploadList = [...newFileUploadList];
 				newFileUploadList[index].status = (result) ? 1 : -1;
 				setFileUploadList(newFileUploadList);

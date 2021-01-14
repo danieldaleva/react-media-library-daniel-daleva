@@ -19,9 +19,9 @@ function readFile(file) {
         };
         fileReader.readAsArrayBuffer(file);
         fileReader.onload = () => {
-            const arrayBuffer = fileReader.result;
-            let bytes = new Uint8Array(arrayBuffer);
-            resolve(bytes);
+            // const arrayBuffer = fileReader.result as ArrayBuffer
+            // let bytes = new Uint8Array(arrayBuffer);
+            resolve(file);
         };
     });
 }
