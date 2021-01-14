@@ -17,7 +17,7 @@ function readFile(file) {
             fileReader.abort();
             reject(new DOMException("Problem parsing input file."));
         };
-        fileReader.readAsArrayBuffer(file);
+        fileReader.readAsDataURL(file);
         fileReader.onload = () => {
             resolve(fileReader.result);
         };

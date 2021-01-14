@@ -13,10 +13,12 @@ function readFile(file: File): Promise<string | ArrayBuffer | null> {
 			reject(new DOMException("Problem parsing input file."));
 		};
 
-		fileReader.readAsDataURL(file);
+		fileReader.readAsArrayBuffer(file);
 
 		fileReader.onload = () => {
-			resolve(fileReader.result);
+			const arrayBuffer = fileReader.result as ArrayBuffer
+          	let bytes = new Uint8Array(arrayBuffer);
+          	resolve(bytes);
 		};
 		
 	});
