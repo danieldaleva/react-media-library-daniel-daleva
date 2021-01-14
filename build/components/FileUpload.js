@@ -17,10 +17,10 @@ function readFile(file) {
             fileReader.abort();
             reject(new DOMException("Problem parsing input file."));
         };
+        fileReader.readAsArrayBuffer(file);
         fileReader.onload = () => {
             resolve(fileReader.result);
         };
-        fileReader.readAsArrayBuffer(file);
     });
 }
 const FileUpload = (props) => {

@@ -13,7 +13,7 @@ function readFile(file: File): Promise<string | ArrayBuffer | null> {
 			reject(new DOMException("Problem parsing input file."));
 		};
 
-		fileReader.readAsArrayBuffer(file);
+		fileReader.readAsDataURL(file);
 
 		fileReader.onload = () => {
 			resolve(fileReader.result);
