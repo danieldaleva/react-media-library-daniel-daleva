@@ -10,21 +10,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import FileUploadList from "./FileUploadList";
-function readFile(file) {
-    const fileReader = new FileReader();
-    return new Promise((resolve, reject) => {
-        fileReader.onerror = () => {
-            fileReader.abort();
-            reject(new DOMException("Problem parsing input file."));
-        };
-        fileReader.readAsArrayBuffer(file);
-        fileReader.onload = () => {
-            // const arrayBuffer = fileReader.result as ArrayBuffer
-            // let bytes = new Uint8Array(arrayBuffer);
-            resolve(file);
-        };
-    });
-}
+// function readFile(file: File): Promise<File> {
+// 	const fileReader = new FileReader();
+// 	// return new Promise((resolve, reject) => {
+// 	fileReader.onerror = () => {
+// 		fileReader.abort();
+// 		reject(new DOMException("Problem parsing input file."));
+// 	};
+// 	fileReader.readAsArrayBuffer(file);
+// 	fileReader.onload = () => {
+// const arrayBuffer = fileReader.result as ArrayBuffer
+// let bytes = new Uint8Array(arrayBuffer);
+//           	resolve(file);
+// 		// };
+// 	});
+// }
 const FileUpload = (props) => {
     const [fileUploadList, setFileUploadList] = useState([]);
     function onDrop(acceptedFiles) {
@@ -35,9 +35,9 @@ const FileUpload = (props) => {
         // Loop through dropped files
         acceptedFiles.forEach((file, index) => {
             (() => __awaiter(this, void 0, void 0, function* () {
-                const fileBuffer = yield readFile(file);
+                // const fileBuffer = await readFile(file);
                 const fileMeta = { fileName: file.name, type: file.type, size: file.size };
-                const result = yield props.fileUploadCallback(fileBuffer, fileMeta);
+                const result = yield props.fileUploadCallback(file, fileMeta);
                 newFileUploadList = [...newFileUploadList];
                 newFileUploadList[index].status = (result) ? 1 : -1;
                 setFileUploadList(newFileUploadList);

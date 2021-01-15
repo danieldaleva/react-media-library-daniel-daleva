@@ -11,14 +11,6 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 	return (
 		<Tabs defaultActiveKey="library" id="react-media-library-tabs">
 
-			{ props.isLoading &&
-				<Tab eventKey="library" title={props.loadingMessage}>
-					<FileLibraryLoading
-						loadingMessage={props.loadingMessage}
-					/>
-				</Tab>
-			}
-
 			{ !props.isLoading &&
 
 				<Tab eventKey="library" title={props.libraryTitle}>
@@ -41,6 +33,14 @@ const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: Reac
 					}
 				</Tab>
 
+			}
+
+			{ props.isLoading &&
+				<Tab eventKey="library" title={props.loadingMessage}>
+					<FileLibraryLoading
+						loadingMessage={props.loadingMessage}
+					/>
+				</Tab>
 			}
 
 			<Tab eventKey="upload" title={props.uploadTitle}>

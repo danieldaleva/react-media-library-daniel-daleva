@@ -5,7 +5,7 @@ export interface FileMeta {
 }
 
 export interface FileUploadProps {
-	fileUploadCallback: (data: any, meta: FileMeta) => Promise<boolean>;
+	fileUploadCallback: (data: File, meta: FileMeta) => Promise<boolean>;
 }
 
 export interface FileUploadListItem {
