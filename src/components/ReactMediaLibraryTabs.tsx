@@ -9,13 +9,14 @@ import FileLibraryLoading from "./FileLibraryIsLoading";
 
 const ReactMediaLibraryTabs: React.FC<ReactMediaLibraryTabsProps> = (props: ReactMediaLibraryTabsProps): JSX.Element => {
 	return (
-		<Tabs defaultActiveKey="library" id="react-media-library-tabs">
+		<Tabs defaultActiveKey={props.defaultActiveKey} id="react-media-library-tabs">
 
 			{ !props.isLoading &&
 
 				<Tab eventKey="library" title={props.libraryTitle}>
 					{(Array.isArray(props.fileLibraryList) && props.fileLibraryList.length > 0) &&
-						<FileLibrary
+					<FileLibrary
+							defaultActiveKey={props.defaultActiveKey}
 							fileLibraryList={props.fileLibraryList}
 							fileSelectCallback={props.fileSelectCallback}
 							fileDeleteCallback={props.fileDeleteCallback}

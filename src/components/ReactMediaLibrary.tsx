@@ -19,6 +19,7 @@ const ReactMediaLibrary: React.FC<ReactMediaLibraryProps> = (props: ReactMediaLi
 			</Modal.Header>
 			<Modal.Body>
 				<ReactMediaLibraryTabs
+					defaultActiveKey={props.defaultActiveKey}
 					deleteButtonLabel={props.deleteButtonLabel}
 					selectButtonLabel={props.selectButtonLabel}
 					isLoading={props.isLoading}
@@ -45,6 +46,7 @@ ReactMediaLibrary.defaultProps = {
 	loadingMessage: "Loading media...",
 	deleteButtonLabel: 'Delete',
 	selectButtonLabel: 'Select File',
+	defaultActiveKey: 'upload',
 	isLoading: true,
 };
 

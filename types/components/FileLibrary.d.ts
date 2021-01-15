@@ -13,6 +13,7 @@ export interface FileLibraryListItem {
 }
 
 export interface FileLibraryProps {
+	defaultActiveKey?: string
 	deleteButtonLabel?: string;
 	selectButtonLabel?: string;
 	isLoading?: boolean;
